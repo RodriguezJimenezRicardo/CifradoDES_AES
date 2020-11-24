@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifrado DES y AES</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+</head>
+<body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/components/tripledes.js"></script>
+
+    <div class="container">
+        <div class="row">
+          <div class="one-half column" style="margin-top: 15%">
+            <h1>Cifrado DES</h2>
+            <p>El tamaño de la clave debe de tener un tamaño exacto de 8 caracteres. Debes de leer primero el archivo para cifrar o descifrar</p>
+                <input type="file" id="archivodes" >
+                <br>
+                <input type="button" value="Leer Archivo" onclick="leerdes()">
+                <br>
+                <input type="password" placeholder="Clave" id="clavedes" onkeypress="return letras(event)" maxlength="8" minlength="8">
+                <br>
+                <input type="button" value="Cifrar" onclick="cifraDes()">
+                <br>
+                <input type="button" value="Descifrar" onclick="descifraDes()">
+                <p id="txtDes"></p>
+                
+                <div id="resultado"></div>
+          </div>
+          <div class="one-half column" style="margin-top: 15%">
+            <h1>Cifrado AES</h2>
+            <p>CryptoJS nos agraega un padding a las claves si estas se encuentran incompletas c:. 
+                Debes de leer primero el archivo para cifrar o descifrar</p>
+            <input type="file" id="archivoaes" >
+            <br>
+            <input type="button" value="Leer Archivo" onclick="leeraes()">
+            <br>
+            <input type="password" placeholder="Clave" id="claveaes" onkeypress="return letras(event)" maxlength="20">
+            <br>
+            <input type="button" value="Cifrar" onclick="cifraAes()">
+            <br>
+            <input type="button" value="Descifrar" onclick="descifraAes()">
+            <p id="txtAes"></p>
+                <div id="resultado"></div>
+          </div>
+        </div>
+    </div>  
+
+    <script src="js/logica.js"></script>
+    <script src="js/validacion.js"></script>
+
+</body>
+</html>
